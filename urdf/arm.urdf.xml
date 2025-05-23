@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="arm">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="0.358826590952335 -0.0323869102675921 0.594801895408443"
+        rpy="0 0 0" />
+      <mass
+        value="18.8843030859409" />
+      <inertia
+        ixx="1.57295548692504"
+        ixy="-1.03764107570275E-16"
+        ixz="2.45116089524862E-16"
+        iyy="2.68524424702213"
+        iyz="-0.0621807558344246"
+        izz="1.14208815030949" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="movable_base">
+    <inertial>
+      <origin
+        xyz="-0.115884119500156 0.0247321032986734 0.0131101452411752"
+        rpy="0 0 0" />
+      <mass
+        value="4.13782987535747" />
+      <inertia
+        ixx="0.0596803521491986"
+        ixy="-0.00188177325498721"
+        ixz="0.000449781428606189"
+        iyy="0.0758773543489476"
+        iyz="0.00450021656220197"
+        izz="0.0263665027222146" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/movable_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/movable_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="movable_base"
+    type="prismatic">
+    <!--<origin
+      xyz="0.23383 -0.41961 -0.0074803"
+      rpy="1.5708 0 3.1416" />-->
+    <origin 
+      xyz="0 0.245 0.02"
+      rpy="1.57 0 3.14"/>
+    <parent
+      link="base" />
+    <child
+      link="movable_base" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.13"
+      upper="0.38"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pitch_1">
+    <inertial>
+      <origin
+        xyz="-1.00228220167864E-09 0.125000000000003 0.0400000264131145"
+        rpy="0 0 0" />
+      <mass
+        value="1.34084479441666" />
+      <inertia
+        ixx="0.0212683427194724"
+        ixy="2.04977362904371E-09"
+        ixz="-6.05985994153405E-11"
+        iyy="0.00148193995328538"
+        iyz="-2.45072132264728E-19"
+        izz="0.0213838223585823" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_1"
+    type="revolute">
+    <origin
+      xyz="-0.125 0.09 0"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="movable_base" />
+    <child
+      link="pitch_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pitch_2">
+    <inertial>
+      <origin
+        xyz="-1.00353297893818E-09 0.124999999999969 0.0400000264131148"
+        rpy="0 0 0" />
+      <mass
+        value="1.34084479441666" />
+      <inertia
+        ixx="0.0212683427194723"
+        ixy="2.05000007203957E-09"
+        ixz="-6.05985991221634E-11"
+        iyy="0.00148193995328538"
+        iyz="3.29269433950373E-19"
+        izz="0.0213838223585823" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_2"
+    type="revolute">
+    <origin
+      xyz="0 0.25 0.08"
+      rpy="0 0 -2.7389" />
+    <parent
+      link="pitch_1" />
+    <child
+      link="pitch_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pitch_3">
+    <inertial>
+      <origin
+        xyz="3.31347189963527E-08 0.0759348637229414 -2.5430204497745E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.940260315044162" />
+      <inertia
+        ixx="0.00396836836784732"
+        ixy="-1.94107531770915E-09"
+        ixz="-5.5546776360272E-10"
+        iyy="0.00147187552877434"
+        iyz="1.2664855650686E-09"
+        izz="0.0035048277420071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_3"
+    type="revolute">
+    <origin
+      xyz="0 0.25 -0.04"
+      rpy="0 0 -0.40272" />
+    <parent
+      link="pitch_2" />
+    <child
+      link="pitch_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pitch_4">
+    <inertial>
+      <origin
+        xyz="-5.02438646243775E-11 -1.04032615855232E-11 -1.50806589438446E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0299723596505312" />
+      <inertia
+        ixx="3.36926678367405E-06"
+        ixy="-4.53235907444788E-14"
+        ixz="-5.57281323493245E-15"
+        iyy="4.03156433002883E-06"
+        iyz="-5.15842747240514E-16"
+        izz="4.03156433323729E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/pitch_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_4"
+    type="revolute">
+    <origin
+      xyz="0 0.34 0"
+      rpy="2.1729 -1.5708 0" />
+    <parent
+      link="pitch_3" />
+    <child
+      link="pitch_4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="roll">
+    <inertial>
+      <origin
+        xyz="0.0781392460676823 -0.00639087042358971 0.00847170518791368"
+        rpy="0 0 0" />
+      <mass
+        value="0.795141243095942" />
+      <inertia
+        ixx="0.000902928943635272"
+        ixy="3.54091256878613E-05"
+        ixz="-4.46698032030149E-05"
+        iyy="0.00115112042265144"
+        iyz="0.000188687371590841"
+        izz="0.00108571615127358" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roll"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-2.269 0.96867 1.5708" />
+    <parent
+      link="pitch_4" />
+    <child
+      link="roll" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="gripper">
+    <inertial>
+      <origin
+        xyz="0.000455465252383769 -0.0377050066051234 0.0122535556460587"
+        rpy="0 0 0" />
+      <mass
+        value="0.0637969273495392" />
+      <inertia
+        ixx="3.16792293434862E-05"
+        ixy="1.33053560020047E-11"
+        ixz="-7.41966690678641E-11"
+        iyy="9.54454485195236E-06"
+        iyz="3.62063622374094E-08"
+        izz="3.70424177701324E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/gripper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm/meshes/gripper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper"
+    type="prismatic">
+    <origin
+      xyz="0.19458 -0.020401 0.024655"
+      rpy="-0.0035592 0.69819 -1.5763" />
+    <parent
+      link="roll" />
+    <child
+      link="gripper" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.08"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
